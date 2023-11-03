@@ -1,43 +1,142 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>HOME-PRO-CONNECT</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="./static/style.css">
-        <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
-    
-<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;500&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/60fedd8558.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Add Amazon-like CSS here */
+        body {
+            font-family: 'Amazon Ember', 'Roboto', sans-serif;
+            background-color: #e7e6e6;
+            margin: 0;
+            padding: 0;
+        }
 
-<!-- Bootstrap CSS -->
+        .navbar {
+            background-color: #232f3e;
+            color: #fff;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
 
-<script src="https://kit.fontawesome.com/60fedd8558.js" crossorigin="anonymous"></script>    
-<title>HOME-PRO-CONNECT</title>
-  </head>
-  <style>
-    @media (max-width: 768px) {
-  /* Styles for smaller screens (e.g., smartphones) */
-}
-@media (min-width: 769px) and (max-width: 1024px) {
-  /* Styles for medium-sized screens (e.g., tablets) */
-}
-  </style>
+        .navbar-brand img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-menu a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar-menu a.cart-logo {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .navbar-menu a.cart-logo img {
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .box-sz {
+            padding: 20px 30px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            margin-right: 20px;
+            margin-left: 35px;
+        }
+
+        .box1-sz {
+            margin-top: 15px;
+            padding: 15px 0px;
+            border-top: 1.5px solid #E2E5DE;
+        }
+
+        .mid1-sz {
+            font-weight: 450 !important;
+            padding: 0px !important;
+        }
+
+        .mid2-sz {
+            font-weight: 500 !important;
+            margin: 0 !important;
+        }
+
+        .mid3-sz {
+            color: #058552;
+        }
+
+        .df-sz {
+            display: flex;
+        }
+
+        .cvv {
+            margin-top: 20px;
+        }
+
+        .bg-dark {
+            background-color: #232f3e;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .pt-5 {
+            padding-top: 3rem;
+        }
+
+        .pb-4 {
+            padding-bottom: 2.5rem;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-brand img {
+                height: 25px;
+                margin-right: 5px;
+            }
+        }
+    </style>
+</head>
+
 <body>
-
     <section>
-      <nav class="navbar navbar-expand-lg navbar-light" style="background: #2980b9;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./home.html">
-                <img src="Images\Logo\ApniDukan.png" alt="logo" width="45" height="35" class="d-inline-block align-text-top mr-2 navbar-logo">
-            </a>
-        </div>
-    </nav>
+        <nav class="navbar">
+            <div class="navbar-brand">
+                <img src="https://example.com/path_to_your_logo.png" alt="logo">
+            </div>
+            <div class="navbar-menu">
+                <a href="#">Services</a>
+                <a href="#">About Us</a>
+                <a href="#">Contact</a>
+                <a class="cart-logo" href="cart.html">
+                    <img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.freeiconspng.com%2Fthumbs%2Fshopping-cart-icon%2Fshopping-cart-icon-3.png&tbnid=tU__XGrVk8GyBM&vet=12ahUKEwjujYDa1qeCAxXSfWwGHTDbC8oQMygAegQIARBR..i&imgrefurl=https%3A%2F%2Fwww.freeiconspng.com%2Fimages%2Fcart-icon&docid=EYYdO6RcnAc15M&w=320&h=239&q=cart%20logo%20png%20small%20size&ved=2ahUKEwjujYDa1qeCAxXSfWwGHTDbC8oQMygAegQIARBR" alt="Cart Logo">
+                    Cart
+                </a>
+                <a href="#">
+                    <img src="https://example.com/path_to_your_account_logo.png" alt="Account Logo" style="height: 20px;">
+                </a>
+            </div>
+        </nav>
     </section>
      <section>
       <div style="margin:20px 20px;" class="row">
