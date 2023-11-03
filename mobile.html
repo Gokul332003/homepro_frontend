@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HOME-PRO-CONNECT</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./static/style.css">
+    <link rel="stylesheet" href="./static/mobile.css">
+    <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/60fedd8558.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<style>
+  @media (max-width: 768px) {
+  /* Styles for smaller screens (e.g., smartphones) */
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Styles for medium-sized screens (e.g., tablets) */
+}
+</style>
+<body>
+<section>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background: #2980b9;">
+        <!-- Your existing code for the navbar -->
+    </nav>
+</section>
+<marquee class="moving-header">Welcome To <i>HomeProConnect</i>.com<sup>&reg;</sup></marquee>
+<section class="deals">
+    <div class="inner">
+        <div>
+            <a href="ceiling_fan.html">
+                <img src="https://media.istockphoto.com/id/1410673632/photo/electrician-repairs-the-ceiling-fan.jpg?s=612x612&w=0&k=20&c=QRYTezfjgpjYsBBCNBc75vjKu-nbSgNjLkHrPb9z5Tg=">
+                <h3 class="mobile-name">CEILING FAN REPAIR</h3>
+                <p>Brands: Balaji, Usha, Havells, All</p>
+                <p class="mobile-inner">Price: Rs.300</p>
+                <button class="buybutton mobile-inner">Buy</button>
+            </a>
+        </div>
+
+        <div>
+            <a href="ac_service.html">
+                <img src="https://jainservice.com/wp-content/uploads/2017/07/ac-service1.jpg">
+                <h3 class="mobile-name">AC SERVICE</h3>
+                <p>AC repair & Service, Installation, Cleaning</p>
+                <p class="mobile-inner">Price: Rs.1299</p>
+                <button class="buybutton mobile-inner">Buy</button>
+            </a>
+        </div>
+
+        <!-- Add other service blocks similarly -->
+
+    </div>
+</section>
+<footer class="bg-dark text-white pt-5 pb-4">
+    <!-- Your existing code for the footer -->
+</footer>
+
+<script src="./static/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- Scroll to top button -->
+<button id="btnScrollToTop">
+    <i class="material-icons">arrow_upward</i>
+</button>
+
+<script>
+    const btnScrollToTop = document.querySelector("#btnScrollToTop");
+    btnScrollToTop.addEventListener("click", function () {
+        window.scrollTo(0, 0);
+    });
+</script>
+</body>
+</html>

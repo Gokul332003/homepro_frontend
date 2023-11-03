@@ -1,0 +1,129 @@
+/* Reset some default styles to ensure consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set a background color for the body */
+body {
+  font-family: 'Poppins', sans-serif; /* Use the Google Fonts Poppins */
+  background-color: #f0f0f0; /* Change to your desired background color */
+}
+
+/* Style the navigation bar */
+.navbar {
+  background: #2980b9;
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #1c6ea4; /* Change the hover color as desired */
+}
+
+/* Style the header */
+.moving-header {
+  background: #2980b9;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Style the main content section */
+.header-mob {
+  background: #2980b9;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.header-mob .logo {
+  width: 100px; /* Adjust the logo width as needed */
+  height: auto;
+}
+
+.online {
+  font-size: 24px;
+}
+
+/* Style the product cards in the "deals" section */
+.deals {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.deals div {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-name {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.mobile-inner {
+  margin-top: 10px;
+}
+
+.buybutton {
+  background: #2980b9;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buybutton:hover {
+  background: #1c6ea4; /* Change the hover color as desired */
+}
+
+/* Style the footer */
+footer {
+  background: #343a40;
+  color: white;
+  padding: 30px 0;
+  text-align: center;
+}
+
+/* Style the footer links */
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Style the scroll-to-top button */
+#btnScrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2980b9;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#btnScrollToTop:hover {
+  background: #1c6ea4; /* Change the hover color as desired */
+}
