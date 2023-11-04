@@ -170,13 +170,12 @@
         }
 
         function goToCheckout() {
-            const totalAmount = displayCartItems();
-            if (totalAmount > 0) {
-                window.location.href = `payment.html?amount=${totalAmount}`;
-            }
-        }
-
-        displayCartItems();
+    const totalAmount = displayCartItems();
+    if (totalAmount > 0) {
+        window.location.href = `payment.html?amount=${totalAmount}`;
+    }
+  }
+    displayCartItems();
     </script>
 </body>
 
