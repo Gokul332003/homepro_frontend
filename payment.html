@@ -1,368 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>HOME-PRO-CONNECT</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  <style>
-    @media only screen and (max-width: 600px) {
-        /* Add your mobile-specific styles here */
-        /* Example: */
-        body {
-          font-size: 14px;
-        }
-        /* Adjust other styles as needed */
+  <head>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
       }
-   .form-check select.form-select {
-    /* Customize the appearance of the select dropdown */
-    margin-top: 15px; /* Example: Adjust the top margin */
-    width: 100%; /* Example: Make the select dropdown full width */
-    padding: 10px; /* Example: Add padding */
-    border: 1px solid #ccc; /* Example: Add a border */
-    border-radius: 5px; /* Example: Round the corners */
-    background-color: #f5f5f5; /* Example: Set background color */
-    color: #333; /* Example: Set text color */
-    font-size: 14px; /* Example: Set font size */
-  }
-  /* Style for the navbar */
-  .navbar {
-    background-color: #333; /* Set the background color */
-    color: #fff; /* Set the text color */
-    padding: 10px; /* Add padding to the navbar */
-  }
   
-  /* Style for the navigation links */
-  .navbar-menu a {
-    text-decoration: none; /* Remove underlines from links */
-    color: #fff; /* Set link text color */
-    margin: 0 15px; /* Add spacing between links */
-    font-size: 16px; /* Set font size for links */
-  }
+      .navbar {
+        background-color: #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        color: #fff;
+      }
   
-  /* Style for the cart logo link */
-  .cart-logo {
-    background-color: #f00; /* Set a background color for the cart link */
-    color: #fff; /* Set text color for the cart link */
-    padding: 5px 10px; /* Add padding to the cart link */
-    border-radius: 5px; /* Round the corners of the cart link */
-  }
-  /* Style for the navbar */
-  .navbar {
-      background-color: #333; /* Set the background color */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
-  }
+      .navbar-brand img {
+        max-width: 150px;
+      }
   
-  /* Style for the logo */
-  .navbar-brand img {
-      max-width: 150px; /* Adjust the maximum width of the logo */
-    }
-    
-    /* Style for the navigation links */
-    .navbar-menu a {
-      text-decoration: none;
-      color: #fff;
-      margin: 0 15px;
-      font-size: 16px;
-    }
-    
-    /* Style for the cart logo link */
-    .cart-logo {
-      background-color: #f00;
-      color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-  }
-  /* Style for the outer container with padding, box-shadow, and width */
-  .col-md-7.box-sz {
-    padding: 20px 30px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-right: 20px;
-    margin-left: 35px;
-    width: 58% !important;
-  }
+      .navbar-menu {
+        display: flex;
+        align-items: center;
+      }
   
-  /* Style for the heading */
-  h3.mid1-sz {
-    font-weight: 450 !important;
-    padding: 0 !important;
-  }
+      .navbar-menu a {
+        text-decoration: none;
+        color: #fff;
+        margin: 0 15px;
+        font-size: 16px;
+      }
   
-  /* Style for the border and padding inside the container */
-  div.box-sz {
-    border: 1px solid #E2E5DE;
-    padding: 10px 20px;
-    margin-top: 15px;
-  }
+      .cart-logo {
+        background-color: #f00;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
   
-  /* Style for the row with a bottom border */
-  div.box-sz .row {
-    border-bottom: 1px solid #E2E5DE;
-  }
+      .box-sz {
+        padding: 20px 30px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
   
-  /* Style for the box-sz container */
-  .box-sz {
-    padding: 20px 30px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  }
+      h3 {
+        font-weight: 450!important;
+        padding: 0px!important;
+      }
   
-  /* Style for the heading */
-  h3.mid1-sz {
-    font-weight: 450 !important;
-    padding: 0 !important;
-  }
+      .row {
+        margin: 20px 20px;
+      }
   
-  /* Style for the box1-sz container with margin and border */
-  div.box1-sz {
-    margin-top: 15px;
-    padding: 15px 0;
-    border-top: 1.5px solid #E2E5DE;
-  }
+      .col-md-7 {
+        margin-right: 20px;
+        margin-left: 35px;
+        width: 58% !important;
+      }
   
-  /* Style for the success message */
-  p.mid3-sz {
-    color: #058552;
-  }
+      .col-md-6 {
+        width: 50%;
+      }
   
-  /* Style for the item total section */
-  div.box1-sz h5.mid2-sz {
-    font-weight: 500 !important;
-    margin: 0 !important;
-    float: left;
-  }
+      .mid1-sz {
+        font-weight: 450!important;
+        padding: 0px!important;
+      }
   
-  div.box1-sz h5.mid2-sz span {
-    font-weight: 400 !important;
-    margin: 0 !important;
-    float: right;
-  }
+      .cards-users p {
+        font-size: 17px!important;
+        font-weight: 500!important;
+        margin-top: 15px;
+        border-bottom: 1px solid #E2E5DE;
+        padding-bottom: 17px;
+      }
   
-  /* Style for the taxes and charges section */
-  div.df-sz {
-    margin-top: 15px;
-  }
+      .cvv span {
+        font-size: 14px!important;
+        margin-left: 5px;
+        font-weight: 500!important;
+      }
   
-  /* Style for the "To Pay" section */
-  div.df-sz h5.mid2-sz {
-    font-weight: 500 !important;
-    margin: 0 !important;
-    float: center;
-  }
+      input[type="text"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
   
-  div.df-sz h5.mid2-sz span {
-    font-weight: 400 !important;
-    margin: 0 !important;
-    float: right;
-  }
+      .btn-sm {
+        padding: 10px 20px;
+        margin-top: 20px;
+        background-color: #f0ad4e;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
   
-  /* Style for the "To Pay" container with border */
-  div.box1-sz h5.mid2-sz {
-    font-weight: 500 !important;
-    margin: 0 !important;
-    float: left;
-  }
+      .btn-sm:hover {
+        background-color: #ec971f;
+      }
   
-  div.box1-sz h5.mid2-sz span {
-    font-weight: 400 !important;
-    margin: 0 !important;
-    float: right;
-  }
+      select {
+        margin-top: 15px;
+        width: 100%;
+        padding: 8px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
   
-  /* Style for the "Book Now" button */
-  div.box-sz div.box1-sz div.box1-sz div div {
-    display: flex;
-    justify-content: center;
-  }
+      .bg-dark {
+        background-color: #343a40;
+      }
   
-  div.box-sz div.box1-sz div.box1-sz div div a.btn.btn-success {
-    /* Customize the button's appearance */
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 5px;
-  }
-  /* Center the box-sz container */
-  .box-sz {
-    width: 50%; /* Adjust the width as needed */
-    margin: 0 auto; /* Center the box horizontally */
-    padding: 20px 30px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin-top: 20px;
-  }
+      .text-white {
+        color: #fff;
+      }
   
-  /* Style for the heading */
-  h5.mid2-sz {
-    font-weight: 500 !important;
-    margin: 0 !important;
-    color: #058552;
-  }
+      .pt-5 {
+        padding-top: 3rem;
+      }
   
-  /* Style for the text sections */
-  .box-sz div {
-    margin-top: 15px;
-  }
+      .pb-4 {
+        padding-bottom: 1.5rem;
+      }
   
-  .box-sz span {
-    font-weight: 500;
-  }
+      .text-md-left {
+        text-align: left;
+      }
   
-  /* Style for the "T&C" links */
-  .box-sz span a {
-    color: blue;
-    text-decoration: none;
-  }
-  /* Style for the footer container */
-  footer {
-    background-color: #eea5c5; /* Set the background color */
-    color: #fff; /* Set the text color */
-    font-size: 18px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
+      .d-flex {
+        display: flex;
+      }
   
-  /* Style for the columns in the footer */
-  footer .col {
-    color: #808080; /* Set the text color for column content */
-    margin-right: 20px; /* Add spacing between columns */
-  }
+      .justify-content-between {
+        justify-content: space-between;
+      }
   
-  /* Style for the headings in the footer */
-  h5.md-sz {
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
+      .font-weight-bold {
+        font-weight: bold;
+      }
   
-  /* Style for footer links */
-  footer a {
-    text-decoration: none;
-    color: #4e3030; /* Set link text color */
-  }
-  
-  /* Style for the "T&C" links */
-  footer a:hover {
-    text-decoration: underline;
-  }
-  /* Style for the "Cards" section */
-  .form-check {
-    margin-top: 24px;
-  }
-  
-  .form-check p {
-    font-size: 17px !important;
-    font-weight: 500 !important;
-    margin-top: 15px;
-    border-bottom: 1px solid #E2E5DE;
-    padding-bottom: 17px;
-  }
-  
-  .form-check input.form-check-input {
-    /* Customize the appearance of the radio button */
-  }
-  
-  .form-check label.form-check-label {
-    font-size: 14px !important;
-  }
-  
-  .form-check label.form-check-label span {
-    font-weight: 500 !important;
-  }
-  
-  .form-check label.form-check-label img {
-    height: 23px;
-    margin-left: 5px;
-    /* Style for the images within the label */
-  }
-  
-  /* Style for the "CVV" section */
-  .cvv {
-    margin-top: 20px;
-    margin-bottom: 15px;
-  }
-  
-  .cvv span {
-    font-size: 14px !important;
-    margin-left: 5px;
-    font-weight: 500 !important;
-  }
-  
-  .cvv input {
-    width: 305px;
-    /* Adjust the width of the input fields as needed */
-  }
-  
-  .cvv input#card-name {
-    width: 150px;
-    /* Adjust the width of the name on card input field */
-  }
-  
-  .cvv input#card-expiry {
-    width: 70px;
-    /* Adjust the width of the card expiry input field */
-  }
-  
-  /* Style for the "Add Card" button */
-  button#card-submit {
-    background-color: #ffc107;
-    color: #333;
-    font-size: 14px;
-    font-weight: 500;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Style for the "UPI" section */
-  .form-check input#upi {
-    margin-top: 24px;
-  }
-  
-  .form-check input#upi + label.form-check-label {
-    font-size: 14px !important;
-  }
-  
-  .form-check input#upi + label.form-check-label span {
-    font-weight: 500 !important;
-  }
-  
-  /* Style for the "Net Banking" section */
-  .form-check input#net {
-    margin-top: 24px;
-  }
-  
-  .form-check input#net + label.form-check-label {
-    font-size: 14px !important;
-  }
-  
-  .form-select {
-    margin-top: 15px;
-  }
-  
-  /* Style for the "EMI" section */
-  .form-check input#emi {
-    margin-top: 24px;
-  }
-  
-  /* Style for the "Cash on Delivery" section */
-  .form-check input#cod {
-    margin-top: 24px;
-  }
-  </style>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-</head>
+      .md-sz {
+        font-size: 18px;
+      }
+    </style>
+  </head>  
 <body>
   <section>
     <nav class="navbar">
@@ -381,6 +170,8 @@
         </nav>
     </section>
      <section>
+      <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+        <div style="width: 90%;" class="col-md-6">
       <div style="margin:20px 20px;" class="row">
         <div style="padding:20px 30px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;margin-right: 20px;margin-left: 35px;width: 58% !important;" class="col-md-7 box-sz">
           <h3 class="mid1-sz" style="font-weight: 450!important;padding: 0px!important">Select a Payment Method</h3>
@@ -459,32 +250,46 @@
             </div>
           </div>  
         </div>
-        <div style="width: 50%;" class="col-md-6">
-          <div class="box-sz" style="padding:20px 30px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; margin-left: auto;">
-            <h3 class="mid1-sz" style="font-weight: 450!important;padding: 0px!important">Total Amount</h3>
-            <div class="box1-sz" style="margin-top: 15px;padding: 15px 0px;border-top:1.5px solid #E2E5DE">
-              <p class="mid3-sz" style="color:#058552"><i class="fa fa-check-circle" aria-hidden="true"></i> Your order is eligible for FREE Delivery.</p>
-              <div>
-                <h5 class="mid2-sz" style="font-weight: 500!important;margin:0!important;float: left;">Item Total: </h5>
-                <h5 class="mid2-sz" style="font-weight: 400!important;margin:0!important;float: right;"><i class="fa fa-inr" aria-hidden="true"></i> <span id="total">2000</span></h5>
-              </div>
-              <br>
-              <div class="df-sz" style="margin-top: 15px">
-                <h5 class="mid2-sz" style="font-weight: 500!important;margin:0!important;float: left;">Taxes & Charges: </h5>
-                <h5 class="mid2-sz" style="font-weight: 400!important;margin:0!important;float: right;"><i class="fa fa-inr" aria-hidden="true"></i> <span>100</span></h5>
-              </div>
-              <br>
-              <div class="box1-sz" style="margin-top: 15px;padding: 15px 0px;border-top:1.5px solid #E2E5DE">
-                <h5 class="mid2-sz" style="font-weight: 500!important;margin:0!important;float: left;">To Pay: </h5>
-                <h5 class="mid2-sz" style="font-weight: 400!important;margin:0!important;float: right;"><i class="fa fa-inr" aria-hidden="true"></i> <span id="totaltopay">2100</span></h5>
-              </div>
-              <br>
-              <div style="display: flex;justify-content: center;">
-                <a class="btn btn-success" href="end.html" role="button">Book Now</a>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 20px;">
+          <div style="width: 130%; margin-right: 90%;" class="col-md-6">
+            <div class="box-sz" style="padding: 20px 30px; box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.24);">
+              <h3 class="mid1-sz" style="font-weight: 450!important; padding: 0;">Total Amount</h3>
+              <div class="box1-sz" style="margin-top: 15px; padding: 15px 0; border-top: 1.5px solid #E2E5DE">
+                <p class="mid3-sz" style="color: #058552">
+                  <i class="fa fa-check-circle" aria-hidden="true"></i> Your order is eligible for FREE Delivery.
+                </p>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <h5 class="mid2-sz" style="font-weight: 500!important; margin: 0;">Item Total: </h5>
+                  <h5 class="mid2-sz" style="font-weight: 400!important; margin: 0;">
+                    <i class="fa fa-inr" aria-hidden="true"></i>
+                    <span id="total">2000</span>
+                  </h5>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
+                  <h5 class="mid2-sz" style="font-weight: 500!important; margin: 0;">Taxes & Charges: </h5>
+                  <h5 class="mid2-sz" style="font-weight: 400!important; margin: 0;">
+                    <i class="fa fa-inr" aria-hidden="true"></i>
+                    <span>100</span>
+                  </h5>
+                </div>
+                <div class="box1-sz" style="margin-top: 15px; padding: 15px 0; border-top: 1.5px solid #E2E5DE">
+                  <h5 class="mid2-sz" style="font-weight: 500!important; margin: 0;">To Pay: </h5>
+                  <h5 class="mid2-sz" style="font-weight: 400!important; margin: 0;">
+                    <i class="fa fa-inr" aria-hidden="true"></i>
+                    <span id="totaltopay">2100</span>
+                  </h5>
+                </div>
+                <div style="display: flex; justify-content: center; margin-top: 20px;">
+                  <a class="btn btn-success" href="end.html" role="button" style="padding: 10px 40px; text-decoration: none; color: white; border-radius: 5px; background-color: #28a745; border-color: #28a745;">
+                    Book Now
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>        
+        </div>
+        
           <!-- <div class="box-sz" style="padding:20px 30px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;margin-top: 20px">
             <h5 class="mid2-sz" style="font-weight: 500!important;margin:0!important;color:#058552"> BEST SERVICE PROVIDER</h5> -->
              <!-- <div style="margin-top: 15px">
@@ -497,7 +302,6 @@
               <br>
               <span style="color:blue">T&C</span>
             </div>  -->
-            
           </div>
           <h5 class="mid2-sz" style="font-weight: 500!important;margin:0!important;color:grey;margin-top: 25px!important;margin-left:20px!important"><i style="margin-right: 7px" class="fa fa-shield" aria-hidden="true"></i> Safe and Secure Payments. Easy returns. 100%  Authentic products.</h5>
         </div>

@@ -2,72 +2,142 @@
 <html>
 
 <head>
-    <title>Ceiling Fan Repair - HOME-PRO-CONNECT</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://m.media-amazon.com/images/G/01/AUIClients/AmazonUI.min._V2_.css">
-    <link rel="icon" href="./Images/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>HOME-PRO-CONNECT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            min-height: 100vh;
+            grid-template-rows: auto 1fr auto;
+        }
+
+ .navbar {
+    background-color: #333; /* Set the background color */
+    color: #fff; /* Set the text color */
+    padding: 10px; /* Add padding to the navbar */
+  }
+
+  .navbar-menu a {
+    text-decoration: none; /* Remove underlines from links */
+    color: #fff; /* Set link text color */
+    margin: 0 15px; /* Add spacing between links */
+    font-size: 16px; /* Set font size for links */
+  }
+
+  .cart-logo {
+    background-color: #f00; /* Set a background color for the cart link */
+    color: #fff; /* Set text color for the cart link */
+    padding: 5px 10px; /* Add padding to the cart link */
+    border-radius: 5px; /* Round the corners of the cart link */
+  }
+
+  .navbar {
+      background-color: #333; /* Set the background color */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+  }
+  .navbar-brand img {
+      max-width: 150px; 
+    }
+    .navbar-menu a {
+      text-decoration: none;
+      color: #fff;
+      margin: 0 15px;
+      font-size: 16px;
+    }
+    .cart-logo {
+      background-color: #f00;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+  }
+        .service-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 50px;
+        }
+
+        .service-details {
+            text-align: center;
+            width: 50%;
+        }
+
+        .service-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 28px;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+        }
+
+        .delivery-date {
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
-<style>
- /* Adjusted CSS for proper alignment */
- body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #f5f5f5;
-        margin: 0;
-    }
-    .service-details {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 20px;
-        text-align: center;
-        background-color: #fff;
-        margin: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    }
-    .service-details img {
-        max-width: 100%;
-        height: auto;
-    }
-    .service-details h2 {
-        font-size: 28px;
-        font-weight: bold;
-        margin: 20px 0 10px;
-    }
-    .service-details p {
-        font-size: 18px;
-        margin-bottom: 10px;
-    }
-    .service-details button {
-        padding: 10px 20px;
-        font-size: 18px;
-        background-color: #2980b9;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 20px;
-    }
-    .service-details button:hover {
-        background-color: #2475a4;
-    }
-</style>
 
 <body>
     <section>
         <nav class="navbar">
-            <div class="navbar-brand">HOME-PRO-CONNECT</div>
-        </nav>
-    </section>
+          <div class="navbar-brand">
+            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Z-RZNKIWoczHagBvwI99v66DIEf4Nr4sUA&usqp=CAU" alt="logo"> -->
+          </div>
+          <div class="navbar-menu">
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
+            <a class="cart-logo" href="cart.html">
+              Cart
+            </a>
+                </div>
+            </nav>
+        </section>
     <section class="service-container">
         <div class="service-details">
-            <img src="https://jainservice.com/wp-content/uploads/2017/07/ac-service1.jpg" style="max-width: 100%; height: auto; border-radius: 5px; margin-bottom: 10px;">
+            <img src="https://jainservice.com/wp-content/uploads/2017/07/ac-service1.jpg">
             <h2>AC Service</h2>
             <p>Professional AC repair and maintenance services. We offer installation, repair, and cleaning for all AC brands and models.</p>
             <p>Price: Rs.1299</p>
+            <p class="delivery-date" id="expectedDeliveryDate"></p>
             <button onclick="addToCart()">Buy Now</button>
             <button id="proceedToCart" style="display: none;" onclick="goToCart()">Proceed to Cart</button>
         </div>
@@ -102,6 +172,13 @@
         function goToCart() {
             window.location.href = "cart.html";
         }
+
+        // Calculate and display the expected delivery date
+        const today = new Date();
+        const expectedDeliveryDate = new Date(today);
+        expectedDeliveryDate.setDate(today.getDate() + 2);
+        const deliveryDateElement = document.getElementById("expectedDeliveryDate");
+        deliveryDateElement.innerText = `Expected delivery date: ${expectedDeliveryDate.toDateString()}`;
     </script>
 </body>
 
