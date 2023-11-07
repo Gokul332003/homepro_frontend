@@ -324,17 +324,36 @@
             });
         }
 
-       // Function to handle OTP verification
-       function verifyOTP() {
+        // Function to handle OTP verification
+        function verifyOTP() {
         const enteredOTP = document.getElementById("otp").value.trim(); // Remove whitespace
 
         if (enteredOTP === serverOTP) {
             // Save the email in local storage
             const email = document.getElementById("email").value;
             localStorage.setItem("studentEmail", email);
-            window.location.href = "home.html";
-        }
-             else {
+
+            // Check if the user exists in the database
+            fetch('http://localhost:3000/checkUserDetails', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.exists) {
+                    window.location.href = 'home.html';
+                } else {
+                    window.location.href = 'account.html';
+                }
+            })
+            .catch(error => {
+                console.error('Error checking user details:', error);
+                // Handle the error as needed
+            });
+        } else {
             alert("Invalid OTP. Please try again.");
         }
     }

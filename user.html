@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account</title>
+    <style>
+body {
+    background-image: url('https://png.pngtree.com/background/20210710/original/pngtree-peaceful-spring-festival-going-home-for-the-new-year-welcome-home-picture-image_972387.jpg'); /* Replace with your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust the transparency as needed */
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+img#profilePictureElement {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 10px auto;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+    font-size: 18px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color: #ff6f61;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+input[type="submit"]:hover {
+    background-color: #e35d4f;
+}
+
+input:read-only {
+    background-color: #f9f9f9;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select:focus {
+    outline: none;
+    border-color: #4d90fe;
+}
+
+option {
+    font-size: 16px;
+}
+
+.inputWithIcon {
+    position: relative;
+}
+
+.inputWithIcon input[type="text"] {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.inputWithIcon .updateOption {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 20px;
+    color: #4CAF50;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.inputWithIcon .updateOption:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <h2>User Account Details</h2>
+    <img id="profilePictureElement" src="" alt="Profile Picture">
+    <form id="accountForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required readonly><br><br>
+
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select the gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="not_specified">Not to Say</option>
+        </select><br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <div class="inputWithIcon">
+            <input type="text" id="mobile" name="mobile" required>
+            <span class="updateOption" onclick="updateMobile()">Update</span>
+        </div>
+        <br><br>
+
+        <label for="profilePicture">Profile Picture:</label>
+        <input type="file" id="profilePicture" name="profilePicture"><br><br>
+
+        <input type="submit" value="Save Details">
+    </form>
+
+    <script>
+        document.getElementById("email").value = localStorage.getItem("studentEmail");
+
+        // Update the profile picture display
+        function updateProfilePicture(data) {
+            const profilePictureElement = document.getElementById("profilePictureElement");
+
+            if (data && data.profilePicture && data.profilePicture.length > 0) {
+                profilePictureElement.src = 'data:image/jpeg;base64,' + data.profilePicture;
+            } else {
+                console.error('Error: Invalid or missing profile picture data.');
+                profilePictureElement.style.display = "none"; // Hide the image element
+            }
+        }
+
+        // Fetch user details from the server and populate the form fields
+        fetch('http://localhost:3000/fetchUserDetails', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email: localStorage.getItem("studentEmail") }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Fetched user details:', data);
+            document.getElementById("name").value = data.name;
+            document.getElementById("gender").value = data.gender;
+            document.getElementById("mobile").value = data.mobile;
+
+            // Update the profile picture display
+            updateProfilePicture(data);
+        })
+        .catch(error => {
+            console.error('Error fetching user details:', error);
+            // Handle the error as needed
+        });
+
+        // Function to convert array buffer to base64
+        function arrayBufferToBase64(buffer) {
+            var binary = '';
+            var bytes = new Uint8Array(buffer);
+            var len = bytes.byteLength;
+            for (var i = 0; i < len; i++) {
+                binary += String.fromCharCode(bytes[i]);
+            }
+            return btoa(binary);
+        }
+    </script>
+</body>
+</html>
