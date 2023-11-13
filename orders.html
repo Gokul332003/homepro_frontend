@@ -42,7 +42,7 @@
             } else {
                 // Fetch orders for the user using their email
                 console.log('Fetching orders...');
-                fetch(`http://localhost:3001/getUserOrders?userEmail=${userEmail}`)
+                fetch(`https://homepro-backend-1-jee6.onrender.com/getUserOrders?userEmail=${userEmail}`)
                     .then(response => {
                         if (!response.ok) {
                             throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -93,7 +93,7 @@ function cancelOrder(serviceType, amount, serviceDate) {
         const userEmail = localStorage.getItem("studentEmail");
 
         // Send a POST request to the server to cancel the order
-        fetch('http://localhost:3001/cancelOrder', {
+        fetch('https://homepro-backend-1-jee6.onrender.com/cancelOrder', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

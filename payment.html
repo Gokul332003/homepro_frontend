@@ -370,20 +370,21 @@
             </div>
           </div>
         </footer>
-  <script>
-    // Retrieve total amount from the URL parameter
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-    const totalAmount = urlParams.get('amount');
-  
-    // Display the total amount and update the 'Item Total' and 'To Pay' values
-    const totalElement = document.getElementById('total');
-    const totalToPayElement = document.getElementById('totaltopay');
-    const taxes = 100; // Example taxes value, you can modify this according to your requirements
-  
-    totalElement.textContent = totalAmount;
-    totalToPayElement.textContent = parseFloat(totalAmount) + taxes;
-  </script>
+ 
+<script>
+  // Retrieve total amount from the URL parameter
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const totalAmount = urlParams.get('amount');
+
+  // Display the total amount and update the 'Item Total' and 'To Pay' values
+  const totalElement = document.getElementById('total');
+  const totalToPayElement = document.getElementById('totaltopay');
+  const taxes = 100; // Example taxes value, you can modify this according to your requirements
+
+  totalElement.textContent = totalAmount;
+  totalToPayElement.textContent = parseFloat(totalAmount) + taxes;
+</script>
 
 <script>
   // Function to fetch cart details from cart.html
@@ -392,58 +393,59 @@
       return cartDetails;
   }
 
-  // Function to send service details to the server
   function storeServiceDetails() {
       const cartDetails = getCartDetails();
       const userEmail = localStorage.getItem("studentEmail");
 
       if (cartDetails.length === 0 || !userEmail) {
           console.error('Error: Cart is empty or user email is missing.');
-          // Handle the error as needed, e.g., show an error message to the user
           return;
       }
 
       // Iterate over each item in the cart and send a separate request for each
       cartDetails.forEach((item, index) => {
-          const serviceType = item.serviceName;  // Replace with actual service type
-          const amount = item.price;  // Replace with actual amount
-          const serviceDate = new Date();  // Replace with actual service date
-          const status = 'Pending'; // Replace with the desired initial status
+          const serviceType = item.serviceName;
+          const amount = item.price;
+          const serviceDate = new Date();
+          const status = 'Pending';
 
-          // Send a POST request to the server to store service details
-          $.ajax({
-              url: 'http://localhost:3001/storeServiceDetails',
-              type: 'POST',
-              contentType: 'application/json',
-              data: JSON.stringify({
+          // Log statements to track the flow
+          console.log(`Processing item ${index + 1}:`, { serviceType, amount, serviceDate, status });
+
+          // Send a POST request to the server using fetch
+          fetch('https://homepro-backend-1-jee6.onrender.com/storeServiceDetails', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
                   userEmail,
                   serviceType,
                   amount,
                   serviceDate,
                   status,
               }),
-              success: function(response) {
-                  console.log(`Service details for item ${index + 1} stored:`, response);
-                  // Redirect to the appropriate page or perform other actions
-                  if (index === cartDetails.length - 1) {
-                      // This is the last item, redirect or perform final actions
-                      window.location.href = 'success.html';  // Replace with the desired page
-                  }
-              },
-              error: function(error) {
-                  console.error(`Error storing service details for item ${index + 1}:`, error);
-                  // Handle the error as needed
+          })
+          .then(response => response.json())
+          .then(data => {
+              console.log(`Service details for item ${index + 1} stored:`, data);
+              if (index === cartDetails.length - 1) {
+                  console.log('All items processed successfully. Redirecting to success.html.');
+                  window.location.href = 'success.html';
               }
+          })
+          .catch(error => {
+              console.error(`Error storing service details for item ${index + 1}:`, error);
           });
       });
   }
 
   // Event listener for the "Book Now" button
   document.getElementById('bookNowButton').addEventListener('click', function() {
+      console.log('Book Now button clicked. Initiating service details storage.');
       storeServiceDetails();
   });
 </script>
-
 
 </body>
 </html>

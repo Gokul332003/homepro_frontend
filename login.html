@@ -334,7 +334,7 @@
             localStorage.setItem("studentEmail", email);
 
             // Check if the user exists in the database
-            fetch('http://localhost:3000/checkUserDetails', {
+            fetch('https://homepro-backend.onrender.com/checkUserDetails', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

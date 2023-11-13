@@ -154,9 +154,9 @@ option {
         </div>
         <br><br>
 
+
         <label for="profilePicture">Profile Picture:</label>
         <input type="file" id="profilePicture" name="profilePicture"><br><br>
-
         <input type="submit" value="Save Details">
     </form>
 
@@ -176,7 +176,7 @@ option {
         }
 
         // Fetch user details from the server and populate the form fields
-        fetch('http://localhost:3000/fetchUserDetails', {
+        fetch('https://homepro-backend.onrender.com/fetchUserDetails', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

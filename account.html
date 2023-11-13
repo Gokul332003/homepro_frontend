@@ -294,7 +294,7 @@ option {
                 formData.append('mobile', mobile);
                 formData.append('profilePicture', profilePicture);
     
-                fetch('http://localhost:3000/storeUserDetails', {
+                fetch('https://homepro-backend.onrender.com/storeUserDetails', {
                     method: 'POST',
                     body: formData,
                 })
@@ -311,7 +311,7 @@ option {
                     });
             });
     
-        fetch('http://localhost:3000/checkUserDetails', {
+        fetch('https://homepro-backend.onrender.com/checkUserDetails', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
