@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -159,12 +161,19 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0Z-RZNKIWoczHagBvwI99v66DIEf4Nr4sUA&usqp=CAU" alt="logo">
       </div>
       <div class="navbar-menu">
-        <a href="#">Services</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact</a>
-        <a class="cart-logo" href="cart.html">
-          Cart
-        </a>
+        <li class="nav-item text-capitalize">
+          <a class="nav-link" href="./home.html">HOME</a>
+      </li>
+        <li class="nav-item text-capitalize">
+          <a class="nav-link" href="./about.html">About us</a>
+      </li>
+     
+      <li class="nav-item text-capitalize">
+          <a class="nav-link" href="./contactus.html">Contact us</a>
+      </li>
+      <li class="nav-item text-capitalize">
+          <a class="nav-link" href="cart.html">My Cart</a>
+      </li> 
         
             </div>
         </nav>
@@ -280,8 +289,9 @@
                     <span id="totaltopay">2100</span>
                   </h5>
                 </div>
+                <!-- <button id="bookNowButton">Book Now</button> -->
                 <div style="display: flex; justify-content: center; margin-top: 20px;">
-                  <a class="btn btn-success" href="end.html" role="button" style="padding: 10px 40px; text-decoration: none; color: white; border-radius: 5px; background-color: #28a745; border-color: #28a745;">
+                  <a class="btn btn-success"id="bookNowButton" href="end.html" role="button" style="padding: 10px 40px; text-decoration: none; color: white; border-radius: 5px; background-color: #28a745; border-color: #28a745;">
                     Book Now
                   </a>
                 </div>
@@ -294,29 +304,72 @@
         </div>
         </div>
         </section>
-        
-    <footer class="bg-dark text-white pt-5 pb-4" style="font-size: 18px;">
-      <div class="container text-md-left d-flex justify-content-between">
-          <div class="col" style="color:#808080;">
-              <h5 class="text-uppercase mb-4 font-weight-bold md-sz">Get to know us</h5>
-              <p><a href="./about.html" class="text-white" style="text-decoration: none;">About us</a></p>
-              <p><a href="./cares.html" class="text-white" style="text-decoration: none;">HomeProConnect cares</a></p>
-              <p><a href="./Partner Stores.html" class="text-white" style="text-decoration: none;">Our Partners</a></p>
+        <footer class="bg-dark text-white pt-5 pb-4" style="font-size: 18px;">
+          <div class="container text-md-left">
+            <div class="row text-md-left">
+              <div class="col mt-3" style="color:#808080;">
+                <h5 class="text-uppercase mb-4 font-weight-bold md-sz">Get to know us</h5>
+                <p>
+                  <a href="./about.html" class="text-white" style="text-decoration: none;">About us</a>
+                </p>
+                <p>
+                    <a href="./contactus.html" class="text-white" style="text-decoration: none;">Contact us</a>
+                  </p>
+    
+              </div>
+              <div class="col mt-3"  style="color:#808080;">
+                <h5 class="text-uppercase mb-4 font-weight-bold md-sz">Let us help you</h5>
+                  <p>
+                    <a href="./paypolicy.html" class="text-white" style="text-decoration: none;">Payments</a>
+                  </p>
+                  
+                  <p>
+                    <a href="canellation.html" class="text-white" style="text-decoration: none;">Cancellation and Returns</a>
+                  </p>
+                  
+                  
+              </div>
+              <div class="col mt-3" style="color:#808080;">
+                <h5 class="text-uppercase mb-4 font-weight-bold md-sz">Policy</h5>
+                 
+                 
+                  <p>
+                    <a href="./privacy.html" class="text-white" style="text-decoration: none;">Privacy</a>
+                  </p>
+              </div>
+              
+              <div class="col mt-3" style="color:#808080;">
+                <div>
+                  <h5 class="text-uppercase mb-4 font-weight-bold md-sz">Connect with us</h5>
+                  <p>
+                    <a href="https://www.facebook.com" class="text-white" style="text-decoration: none;">
+                      <i class="fab fa-facebook-square"></i>
+                      Facebook
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://twitter.com" class="text-white" style="text-decoration: none;">
+                      <i class="fab fa-twitter-square"></i>
+                      Twitter
+                    </a>
+                  </p>
+                  <p>
+                    <a href="https://instagram.com" class="text-white" style="text-decoration: none;">
+                      <i class="fab fa-instagram-square"></i>
+                      Instagram
+                    </a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4">
+            <div class="row align-items-center">
+              <div class="text-center" style="text-align: center;">
+              Content owned and updated by <span class="heart">&#10084;
+              </div>
+            </div>
           </div>
-          <div class="col" style="color:#808080;">
-              <h5 class="text-uppercase mb-4 font-weight-bold md-sz">Let us help you</h5>
-              <p><a href="./paypolicy.html" class="text-white" style="text-decoration: none;">Payments</a></p>
-              <p><a href="" class="text-white" style="text-decoration: none;">Cancellation and Return Payment</a></p>
-              <p><a href="" class="text-white" style="text-decoration: none;">Report an issue</a></p>
-          </div>
-          <div class="col" style="color:#808080;">
-              <h5 class="text-uppercase mb-4 font-weight-bold md-sz">Policy</h5>
-              <p><a href="" class="text-white" style="text-decoration: none;">Amount Return policy</a></p>
-              <p><a href="" class="text-white" style="text-decoration: none;">Time of use</a></p>
-              <p><a href="./privacy.html" class="text-white" style="text-decoration: none;">Privacy</a></p>
-          </div>
-      </div>
-  </footer>
+        </footer>
   <script>
     // Retrieve total amount from the URL parameter
     const queryString = window.location.search;
@@ -331,5 +384,66 @@
     totalElement.textContent = totalAmount;
     totalToPayElement.textContent = parseFloat(totalAmount) + taxes;
   </script>
-    </body>
-    </html>
+
+<script>
+  // Function to fetch cart details from cart.html
+  function getCartDetails() {
+      const cartDetails = JSON.parse(localStorage.getItem("cart")) || [];
+      return cartDetails;
+  }
+
+  // Function to send service details to the server
+  function storeServiceDetails() {
+      const cartDetails = getCartDetails();
+      const userEmail = localStorage.getItem("studentEmail");
+
+      if (cartDetails.length === 0 || !userEmail) {
+          console.error('Error: Cart is empty or user email is missing.');
+          // Handle the error as needed, e.g., show an error message to the user
+          return;
+      }
+
+      // Iterate over each item in the cart and send a separate request for each
+      cartDetails.forEach((item, index) => {
+          const serviceType = item.serviceName;  // Replace with actual service type
+          const amount = item.price;  // Replace with actual amount
+          const serviceDate = new Date();  // Replace with actual service date
+          const status = 'Pending'; // Replace with the desired initial status
+
+          // Send a POST request to the server to store service details
+          $.ajax({
+              url: 'http://localhost:3001/storeServiceDetails',
+              type: 'POST',
+              contentType: 'application/json',
+              data: JSON.stringify({
+                  userEmail,
+                  serviceType,
+                  amount,
+                  serviceDate,
+                  status,
+              }),
+              success: function(response) {
+                  console.log(`Service details for item ${index + 1} stored:`, response);
+                  // Redirect to the appropriate page or perform other actions
+                  if (index === cartDetails.length - 1) {
+                      // This is the last item, redirect or perform final actions
+                      window.location.href = 'success.html';  // Replace with the desired page
+                  }
+              },
+              error: function(error) {
+                  console.error(`Error storing service details for item ${index + 1}:`, error);
+                  // Handle the error as needed
+              }
+          });
+      });
+  }
+
+  // Event listener for the "Book Now" button
+  document.getElementById('bookNowButton').addEventListener('click', function() {
+      storeServiceDetails();
+  });
+</script>
+
+
+</body>
+</html>
