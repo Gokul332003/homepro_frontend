@@ -160,11 +160,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Big Launch - Home Services Booking</title>
+    <title>Exciting News - Home Services Launch</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #FF4081; /* Set the background color */
+            background-color: #2E3B4E;
             margin: 0;
             padding: 0;
             display: flex;
@@ -183,29 +183,28 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 20px;
+            color: #FFD700; /* Golden color for the title */
+            animation: pulsate 1.5s infinite;
         }
 
         p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             margin-bottom: 40px;
+            color: #BBDEFB; /* Light blue color for the text */
+            animation: textShadow 2s infinite alternate-reverse;
         }
 
-        .launch-button {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #fff; /* Set the button background color */
-            color: #FF4081; /* Set the button text color */
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-        }
-
-        .launch-button:hover {
-            background-color: #D81B60; /* Set the button background color on hover */
-            color: #fff; /* Set the button text color on hover */
+        /* Subtle background animation */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #FF4081, #D81B60, #FF4081, #D81B60);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s infinite;
         }
 
         @keyframes fadeInUp {
@@ -218,14 +217,46 @@
                 transform: translateY(0);
             }
         }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes pulsate {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes textShadow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="launch-container">
         <h1>Exciting News!</h1>
-        <p>We're launching a new website</p>
-        <a href="#" class="launch-button">Launch Soon</a>
+        <p>We're thrilled to announce the upcoming launch of our new home services platform.</p>
     </div>
 
 </body>
