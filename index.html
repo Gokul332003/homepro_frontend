@@ -193,7 +193,7 @@
             font-size: 1.5em;
             margin-bottom: 40px;
             color: #555;
-            animation: textShadow 2s infinite alternate-reverse;
+            animation: slideInUp 1s ease-out, textPulse 2s infinite alternate-reverse;
         }
 
         /* Subtle background animation */
@@ -242,12 +242,26 @@
             }
         }
 
-        @keyframes textShadow {
+        @keyframes slideInUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes textPulse {
             0% {
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
             }
             100% {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+                transform: scale(1);
             }
         }
     </style>
@@ -255,11 +269,10 @@
 <body>
 
     <div class="launch-container">
-        <h1>Big Announcement!</h1>
-        <p>We're excited to share that our new and innovative home services platform is launching soon. Stay tuned for an amazing experience!</p>
+        <h1>Big Launch!</h1>
+        <p>We're thrilled to announce the upcoming big launch of our new home services platform.</p>
     </div>
 
 </body>
 </html>
-
-                            
+                 
