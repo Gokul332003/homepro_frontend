@@ -22,6 +22,18 @@
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.12.0/css/tachyons.min.css" />
     <title>Homepro Connect</title>
     <link rel="stylesheet" href="./static/home.css">
+    <style>
+          footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+       
+    </style>
 </head>
 <body>
 
@@ -53,19 +65,10 @@
           </div>
       </div>
   </nav>
-  <h1>User Orders</h1>
-    <div id="ordersList" class="animated"></div>
-    <footer class="bg-dark text-white pt-5 pb-4" style="font-size: 18px;">
-      <div class="col mt-3" style="color:#808080;"></div> 
-        </div>
-        <div class="text-center">
-            Content owned and updated by <span class="heart">&#10084;
-        </div>
-        </div>
-      </div>
-    </footer>
-
-    <script>
+  <h1>Orders</h1>
+  <div id="ordersList" class="animated"></div>
+  
+  <script>
         // Function to fetch orders as soon as the page loads
         function fetchOrders() {
             // Fetch user email from local storage
@@ -95,9 +98,9 @@
                         console.error('Error fetching orders:', error);
                         document.getElementById('ordersList').innerHTML = 'Error fetching orders.';
                     });
-            }
+                }
         }
-    
+        
         function displayOrders(orders) {
     const ordersListDiv = document.getElementById('ordersList');
 
@@ -124,11 +127,11 @@
 function cancelOrder(serviceType, amount, serviceDate) {
     const confirmCancel = confirm('Are you sure you want to cancel this order?');
     const cancelMessageDiv = document.getElementById('cancelMessage');
-
+    
     if (confirmCancel) {
         // Fetch user email from local storage
         const userEmail = localStorage.getItem("studentEmail");
-
+        
         // Send a POST request to the server to cancel the order
         fetch('https://homepro-backend-1-jee6.onrender.com/cancelOrder', {
             method: 'POST',
@@ -142,14 +145,14 @@ function cancelOrder(serviceType, amount, serviceDate) {
                 serviceDate,
             }),
         })
-            .then(response => response.json())
+        .then(response => response.json())
             .then(data => {
                 console.log('Order canceled successfully:', data);
                 // Display the cancellation message
                 cancelMessageDiv.innerHTML = 'Order canceled successfully!';
                 // Refresh the orders after cancellation
                 fetchOrders();
-
+                
                 // Clear the message after a few seconds
                 setTimeout(() => {
                     cancelMessageDiv.innerHTML = '';
@@ -166,6 +169,11 @@ function cancelOrder(serviceType, amount, serviceDate) {
     </script>
     <script src="./static/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </body>
+    <footer class="footer">
+        <div class="container">
+            Content owned and updated by <span class="heart">&#10084;</span>
+        </div>
+    </footer>
+</body>
     </html>
     
