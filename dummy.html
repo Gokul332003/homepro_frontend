@@ -531,6 +531,7 @@
                     <input type="email" name="email" id="email" placeholder=" Email ID" required
                         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 </div>
+                <br>
                 <div class="inputBox" id="otpInput">
                     <i class="fas fa-lock"></i>
                     <input type="text" placeholder="Enter OTP" id="otp" maxlength="6">
@@ -538,6 +539,7 @@
                 <div class="inputBox" style="text-align: center;">
                     <button type="button" id="requestOTP" disabled>Request OTP</button>
                 </div>
+                <br>
                 <div class="inputBox" id="verifyButton">
                     <input class="btn" type="button" value="Verify" onclick="verifyOTP(); blinkEffect()">
                 </div>
@@ -553,7 +555,10 @@
 </section>
 
 <script>
-    
+    function blinkEffect() {
+    var btn = document.querySelector('.btn');
+    btn.style.animation = 'blink 1s infinite';
+         }
     let countdown;
     let isResendMode = false;
     let serverOTP; // Variable to store the server-generated OTP
